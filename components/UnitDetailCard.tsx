@@ -20,18 +20,24 @@ export function UnitDetailCard({
     save,
     move,
     control,
+    baseSize,
+    points,
 }: {
+    preName: string | null | undefined;
     name: string;
+    postName: string | null | undefined;
     description: string;
     wounds: number;
     save: number;
     move: number;
     control: number;
+    baseSize: number;
+    points: number;
 }) {
     return (
         <Card>
-            <Grid container spacing={2}>
-                <Grid container spacing={1} size={4}>
+            <Grid container spacing={1}>
+                <Grid container spacing={1} size={2.5}>
                     <Grid size={6}>
                         <MetricCard metricName="Wounds" metricValue={wounds} />
                     </Grid>
@@ -57,7 +63,19 @@ export function UnitDetailCard({
                 <Grid size={8}>
                     <Box>
                         <Typography variant="h4">{name}</Typography>
-                        <Typography>{description}</Typography>
+                        <Typography fontSize={14}>{description}</Typography>
+                    </Box>
+                </Grid>
+                <Grid size={1.5}>
+                    <Box flexDirection="column">
+                        <MetricCard
+                            metricName={"Base Size"}
+                            metricValue={`${baseSize}"`}
+                        />
+                        <MetricCard
+                            metricName={"Points"}
+                            metricValue={points}
+                        />
                     </Box>
                 </Grid>
             </Grid>

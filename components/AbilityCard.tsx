@@ -27,6 +27,8 @@ export function AbilityCard({ ability }: { ability: Ability }) {
                 style={{
                     backgroundColor: backgroundColor,
                     padding: "5px",
+                    paddingLeft: "10px",
+                    paddingRight: "10px",
                     color: "white",
                 }}
             >

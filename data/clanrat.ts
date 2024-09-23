@@ -7,8 +7,6 @@ export const CLANRAT_MOCK_DATA = {
     baseSize: 25,
     points: 100,
     numberOfModels: 10,
-    imageUrl:
-        "https://whfb.lexicanum.com/mediawiki/images/thumb/0/09/Skaven_Clanrat_HR.jpg/300px-Skaven_Clanrat_HR.jpg",
     description:
         "Clanrats overcome their foes through sheer numbers rather than through skill at arms. Individually, they are little threat to a seasoned warrior, but when they gather in their verminous swarms, they can pull down even the champions of the enemy.",
     meleeWeapons: [
@@ -60,30 +58,6 @@ export const CLANRAT_MOCK_DATA = {
             When the Knight-Vexillor plants their banner, the fortifying energu that emanates from it's hardens flesh and seals sundered armour, empowering the faithful with new resolve.\n\n***Declare:*** Pick D3 friendly ***Stormcast Enternals*** unit to be the targets.\n\n***Effect:*** Add 3 to each target's control score for the rest of the turn. In addition, ***Heal (D3)*** each target.
             `,
         },
-        {
-            phase: "hero",
-            side: "any",
-            phaseText: "Any Hero Phase",
-            text: `***THE BANNER OF THE REFORGED:***
-            When the Knight-Vexillor plants their banner, the fortifying energu that emanates from it's hardens flesh and seals sundered armour, empowering the faithful with new resolve.\n\n***Declare:*** Pick D3 friendly ***Stormcast Enternals*** unit to be the targets.\n\n***Effect:*** Add 3 to each target's control score for the rest of the turn. In addition, ***Heal (D3)*** each target.
-            `,
-        },
-
-        {
-            phase: "hero",
-            side: "any",
-            phaseText: "Any Hero Phase",
-            text: `***THE BANNER OF THE REFORGED:***
-            When the Knight-Vexillor plants their banner, the fortifying energu that emanates from it's hardens flesh and seals sundered armour, empowering the faithful with new resolve.\n\n***Declare:*** Pick D3 friendly ***Stormcast Enternals*** unit to be the targets.\n\n***Effect:*** Add 3 to each target's control score for the rest of the turn. In addition, ***Heal (D3)*** each target.
-            `,
-        },
-        {
-            phase: "hero",
-            side: "any",
-            phaseText: "Any Hero Phase",
-            text: `***THE BANNER OF THE REFORGED:***
-            When the Knight-Vexillor plants their banner, the fortifying energu that emanates from it's hardens flesh and seals sundered armour, empowering the faithful with new resolve.\n\n***Declare:*** Pick D3 friendly ***Stormcast Enternals*** unit to be the targets.\n\n***Effect:*** Add 3 to each target's control score for the rest of the turn. In addition, ***Heal (D3)*** each target.
-            `,
-        },
     ],
+    keywords: ["Cavalry", "Order", "Stormcast Eternals"],
 };
