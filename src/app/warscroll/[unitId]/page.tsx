@@ -1,13 +1,11 @@
 "use client";
-import { useState } from "react";
-import { Box, Card, Container, Paper, styled, Typography } from "@mui/material";
-import { CLANRAT_MOCK_DATA } from "@/data/clanrat";
-import Grid from "@mui/material/Grid2";
+import { Container } from "@mui/material";
 import { UnitDetailCard } from "@/components/UnitDetailCard";
 import { MelleWeaponTable, RangeWeaponTable } from "@/components/WeaponTable";
-import { AbilityCard } from "@/components/AbilityCard";
+
 import { getWarscrollData } from "@/data/mockApiCall";
 import { KeywordList } from "@/components/KeywordList";
+import { AbilityList } from "@/components/AbilityList";
 
 export default function Home() {
     const {
@@ -18,6 +16,7 @@ export default function Home() {
         save,
         control,
         move,
+        wards,
         baseSize,
         points,
         description,
@@ -35,6 +34,7 @@ export default function Home() {
                 save={save}
                 control={control}
                 move={move}
+                wards={wards}
                 preName={preName}
                 postName={postName}
                 baseSize={baseSize}
@@ -42,13 +42,7 @@ export default function Home() {
             />
             <RangeWeaponTable tableData={rangeWeapons} />
             <MelleWeaponTable tableData={meleeWeapons} />
-            <Grid container spacing={1} style={{ marginTop: "10px" }}>
-                {abilities.map((ability) => (
-                    <Grid size={4}>
-                        <AbilityCard ability={ability} />
-                    </Grid>
-                ))}
-            </Grid>
+            <AbilityList abilities={abilities} />
             <KeywordList keywords={keywords} />
         </Container>
     );

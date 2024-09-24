@@ -1,5 +1,4 @@
 import { Box, Paper, styled, Typography } from "@mui/material";
-import Image from "next/image";
 import Grid from "@mui/material/Grid2";
 import { MetricCard } from "./MetricCard";
 const Card = styled(Paper)(({ theme }) => ({
@@ -20,7 +19,7 @@ export function UnitDetailCard({
     save,
     move,
     control,
-    baseSize,
+    wards,
     points,
 }: {
     preName: string | null | undefined;
@@ -30,6 +29,7 @@ export function UnitDetailCard({
     wounds: number;
     save: number;
     move: number;
+    wards: number | undefined | null;
     control: number;
     baseSize: number;
     points: number;
@@ -37,46 +37,43 @@ export function UnitDetailCard({
     return (
         <Card>
             <Grid container spacing={1}>
-                <Grid container spacing={1} size={2.5}>
-                    <Grid size={6}>
-                        <MetricCard metricName="Wounds" metricValue={wounds} />
-                    </Grid>
-                    <Grid size={6}>
-                        <MetricCard
-                            metricName="Move"
-                            metricValue={`${move}"`}
-                        />
-                    </Grid>
-                    <Grid size={6}>
-                        <MetricCard
-                            metricName="Control"
-                            metricValue={control}
-                        />
-                    </Grid>
-                    <Grid size={6}>
-                        <MetricCard
-                            metricName="Save"
-                            metricValue={`${save}+`}
-                        />
-                    </Grid>
-                </Grid>
                 <Grid size={8}>
                     <Box>
                         <Typography variant="h4">{name}</Typography>
                         <Typography fontSize={14}>{description}</Typography>
                     </Box>
                 </Grid>
-                <Grid size={1.5}>
-                    <Box flexDirection="column">
+                <Grid container spacing={1} size={4}>
+                    <Grid size={4}>
+                        <MetricCard metricName="Wounds" metricValue={wounds} />
+                    </Grid>
+                    <Grid size={4}>
                         <MetricCard
-                            metricName={"Base Size"}
-                            metricValue={`${baseSize}"`}
+                            metricName="Move"
+                            metricValue={`${move}"`}
                         />
+                    </Grid>
+                    <Grid size={4}>
+                        <MetricCard metricName="Points" metricValue={points} />
+                    </Grid>
+                    <Grid size={4}>
                         <MetricCard
-                            metricName={"Points"}
-                            metricValue={points}
+                            metricName="Control"
+                            metricValue={control}
                         />
-                    </Box>
+                    </Grid>
+                    <Grid size={4}>
+                        <MetricCard
+                            metricName="Save"
+                            metricValue={`${save}+`}
+                        />
+                    </Grid>
+                    {wards ? (
+                        <MetricCard
+                            metricName="Wards"
+                            metricValue={`${wards}+`}
+                        />
+                    ) : null}
                 </Grid>
             </Grid>
         </Card>

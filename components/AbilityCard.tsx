@@ -1,12 +1,6 @@
+import { Ability } from "@/data/schema";
 import { Card } from "@mui/material";
 import Markdown from "react-markdown";
-
-type Ability = {
-    phase: string;
-    side: string;
-    phaseText: string;
-    text: string;
-};
 
 const PHASE_BACKGROUND_COLOR = new Map<string, string>([
     ["turnStart", "black"],
