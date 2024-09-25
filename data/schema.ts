@@ -37,7 +37,7 @@ export const Warscroll = z.object({
     move: z.number(),
     control: z.number(),
     save: z.number(),
-    wards: z.number().optional(),
+    wards: z.number().optional().nullable(),
     baseSize: z.number(),
     points: z.number(),
     numberOfModels: z.number(),

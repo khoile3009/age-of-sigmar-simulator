@@ -34,8 +34,16 @@ export function UnitDetailCard({
     baseSize: number;
     points: number;
 }) {
+    const metrics = [
+        { name: "Wounds", value: wounds },
+        { name: "Move", value: move },
+        { name: "Points", value: points },
+        { name: "Control", value: control },
+        { name: "Save", value: save },
+        { name: "Wards", value: wards },
+    ];
     return (
-        <Card>
+        <Card style={{ marginTop: "10px" }}>
             <Grid container spacing={1}>
                 <Grid size={8}>
                     <Box>
@@ -44,36 +52,16 @@ export function UnitDetailCard({
                     </Box>
                 </Grid>
                 <Grid container spacing={1} size={4}>
-                    <Grid size={4}>
-                        <MetricCard metricName="Wounds" metricValue={wounds} />
-                    </Grid>
-                    <Grid size={4}>
-                        <MetricCard
-                            metricName="Move"
-                            metricValue={`${move}"`}
-                        />
-                    </Grid>
-                    <Grid size={4}>
-                        <MetricCard metricName="Points" metricValue={points} />
-                    </Grid>
-                    <Grid size={4}>
-                        <MetricCard
-                            metricName="Control"
-                            metricValue={control}
-                        />
-                    </Grid>
-                    <Grid size={4}>
-                        <MetricCard
-                            metricName="Save"
-                            metricValue={`${save}+`}
-                        />
-                    </Grid>
-                    {wards ? (
-                        <MetricCard
-                            metricName="Wards"
-                            metricValue={`${wards}+`}
-                        />
-                    ) : null}
+                    {metrics.map((metric) =>
+                        metric.value ? (
+                            <Grid size={4}>
+                                <MetricCard
+                                    metricName={metric.name}
+                                    metricValue={metric.value}
+                                />
+                            </Grid>
+                        ) : null
+                    )}
                 </Grid>
             </Grid>
         </Card>
